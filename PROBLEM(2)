@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char* my_strdup(char *src) {
+    int len = 0;
+
+    // Find length of src
+    while (*(src + len) != '\0')
+        len++;
+
+    // Allocate memory for duplicate string
+    char *dup = (char*)malloc((len + 1) * sizeof(char));
+
+    if (dup == NULL) {
+        printf("Memory allocation failed!\n");
+        return NULL;
+    }
+
+    // Copy characters using pointer arithmetic
+    for (int i = 0; i <= len; i++) {
+        *(dup + i) = *(src + i);   // copies including '\0'
+    }
+
+    return dup;   // return newly allocated string
+}
+
+int main() {
+    char str[50];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    char *copy = my_strdup(str);
+
+    if (copy != NULL)
+        printf("Duplicated string: %s\n", copy);
+
+    free(copy);  // Free allocated memory
+
+    return 0;
+}
+
