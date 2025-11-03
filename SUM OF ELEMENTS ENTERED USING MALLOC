@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int i,n,*arr,sum=0;
+	printf("enter the size of array to be allocated\n");
+	scanf("%d",&n);
+	arr=(int*)malloc(n*sizeof(int));
+	if(arr==NULL)
+	{
+		printf("the memory is not allocated\n");
+		return 1;
+	}
+	printf("enter %d elements\n",n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+		sum+=arr[i];
+		
+	}
+	printf("elements entered are\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\n",arr[i]);
+	}
+	printf("the SUM=%d",sum);
+}
+
