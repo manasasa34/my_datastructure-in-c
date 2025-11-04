@@ -1,0 +1,23 @@
+//INSERTING(APPENDING) AN ELEMENT AT THE END OF THE ARRAY
+#include<stdio.h>
+#define CAP 50
+int main()
+{  
+    int arr[]={2,4,6,8,3,9,0};
+     int n=sizeof(arr)/sizeof(arr[0]);  //7 is the next index size
+     int  value=7;
+     if(n<CAP)
+     {
+         arr[n]=value;
+         n++;
+          printf("array elements :");
+     for(int i=0;i<n;i++)
+     {
+         printf(" %d ",arr[i]);
+     }
+     }
+     else{
+     printf("array is full\n");
+         
+     }
+    
