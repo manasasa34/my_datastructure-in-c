@@ -1,0 +1,15 @@
+//DELETE AN ELEMENT AT THE BEGINING OF THE ARRAY
+#include<stdio.h>
+int main()
+{
+    int arr[]={2,5,7,9,0};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int i;
+    for(i=0;i<n-1;i++)
+    arr[i]=arr[i+1];
+    n--;
+    printf("array after deleting an element: ");
+    for(i=0;i<n;i++)
+    printf("%d ",arr[i]);
+    return 0;
+}
