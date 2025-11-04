@@ -1,0 +1,12 @@
+//HERE IN THIS PROGRAM IT TAKE ARRAY SIZE =(NO OF ELEMENTS IN THE ARRAY *DATA TYPE(INT(4),FLOAT(8),CHAR(2)) LIKE)/value(int or floator anything )
+//Traversing time complexity=O(n)
+#include<stdio.h>
+int main()
+{
+    int a[]={5,20,30,40,50,90};
+    int n=sizeof(a)/sizeof(a[0]);
+    printf("%d\n",n);
+    for(int i=0;i<n;i++)
+    
+    printf("%d ",a[i]);
+}
