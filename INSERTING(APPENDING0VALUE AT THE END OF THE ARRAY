@@ -20,4 +20,5 @@ int main()
      printf("array is full\n");
          
      }
-    
+
+     TIME COMPLEXITY IS O(1)
