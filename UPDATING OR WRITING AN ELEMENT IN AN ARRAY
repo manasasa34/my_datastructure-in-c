@@ -1,0 +1,22 @@
+// UPDATING OR WRITING A NEW VALUE IN THE ARRAY
+#include<stdio.h>
+int main()
+{
+    int arr[]={1,3,23,54,6,0,7};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("elements before updating an element in the array:");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    int index=3;
+    int newvalue=41;
+    if(index>=0&&index<n)
+    arr[index]=newvalue;
+    printf("\nelements in the array after updating new value is:");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
