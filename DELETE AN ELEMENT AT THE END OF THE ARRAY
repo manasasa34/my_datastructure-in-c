@@ -1,0 +1,19 @@
+//DELETE AN ELEMENT AT THE END OF THE ARRAY
+#include<stdio.h>
+int main()
+{
+    int arr[]={4,5,8,9,6},i;
+    int n=sizeof(arr)/sizeof(arr[0]);
+    printf("array before delete an element:\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    n--;
+    printf("\narray after delete an element:");
+    for( i=0;i<n;i++)
+    printf("%d ",arr[i]);
+    
+    printf("\nreported by Manasa S A\n USN:1SV24CS069");
+    return 0;
+}
