@@ -1,0 +1,20 @@
+//LINKED LIST
+//NODE CREATION
+#include<stdio.h>
+#include<stdlib.h>
+struct Node{
+    int data;
+    struct Node*next;
+};
+struct Node*head=NULL;
+int main()
+{
+    head=(struct Node*)malloc(sizeof(struct Node));
+    head->data=19;
+    head->next=NULL;
+    printf("the data value of the node: %d",head->data);
+    printf("\nthe pointer value of the head node : %d",head->next);
+    return 0;
+}
+
+
