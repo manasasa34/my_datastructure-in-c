@@ -39,6 +39,13 @@ void dequeue(){
         
     
 }
+void peek()
+{
+    if(front==-1||front>rear)
+    printf("//in peek operation queue is empty\n");
+    else
+    printf(" // in peek operation front element=%d\n",queue[front]);
+}
  void display(){
     // int queue[SIZE];
     if(front==-1||front>rear)
@@ -63,14 +70,17 @@ int main()
     enqueue(50);
     
     display();
-    
- /*   dequeue();
+      peek();
+
+   dequeue();
     dequeue();
     dequeue();
     dequeue();
     dequeue();
     
-    display();*/
+    display();
+  peek();
+
     return 0;
     
     
