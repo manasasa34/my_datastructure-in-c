@@ -1,0 +1,60 @@
+
+#include<stdio.h>
+#define MAX 5
+int top=-1;
+int stack[MAX];
+void push(int value)
+{
+    if(top==MAX-1)
+    printf("the stack is full/ overflow to insert value %d \n",stack[top]);
+    else{
+        top++;
+        stack[top]=value;
+    
+    printf("%d element is inserted to stack\n",stack[top]);
+}
+}
+void pop()
+{
+    if(top==-1)
+    printf("stack is empty,there is nothing to delete\n");
+    else{
+        top--;
+        printf("\n%d element is deleted",stack[top]);
+    }
+}
+void peek()
+{
+    if(top==-1)
+    printf("in peek condition the stack is empty\n");
+    else
+    printf("\nin peek condition the top element is %d",stack[top]);
+}
+void display()
+{
+    if(top==-1)
+    printf("the stack is empty ,nothing is there to display\n");
+    else{
+        printf("\nstack elements:");
+        for(top=0;top<MAX;top++){
+            printf("%d ",stack[top]);
+        }
+}
+}
+
+int main(){
+    push(10);
+    push(20);
+    push(30);
+    push(40);
+    push(50);
+    push(15);
+    
+    display();
+    pop();
+    pop();
+    pop();
+    
+    display();
+    peek();
+}
