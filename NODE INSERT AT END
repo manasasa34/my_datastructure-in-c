@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+// Function to insert at end (to create list)
+void insertEnd(int value) {
+    struct Node* newNode = malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (head == NULL) {
+        head = newNode;
+        return;
+    }
+
+    struct Node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
+// ✅ Delete node at END
+void deleteEnd() {
+    if (head == NULL) {
+        printf("List is empty! Nothing to delete.\n");
+        return;
+    }
+
+    // If only one node
+    if (head->next == NULL) {
+        free(head);
+        head = NULL;
+        printf("Last node deleted.\n");
+        return;
+    }
+
+    // Traverse to second last node
+    struct Node* temp = head;
+    while (temp->next->next != NULL) {
+        temp = temp->next;
+    }
+
+    // temp->next is last node
+    free(temp->next);
+    temp->next = NULL;
+
+    printf("Last node deleted.\n");
+}
+
+// Display
+void display() {
+    struct Node* temp = head;
+
+    if (temp == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    insertEnd(10);
+    insertEnd(20);
+    insertEnd(30);
+
+    printf("Before deletion:\n");
+    display();
+
+    deleteEnd();
+
+    printf("After deletion:\n");
+    display();
+
+    return 0;
+}
